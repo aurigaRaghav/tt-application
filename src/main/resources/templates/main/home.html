@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layouts :: header">
+
+</head>
+<body>
+
+
+
+	<div class="main-wrapper">
+		<div class="container">
+			<div class="img-with-text">
+				<img src="../static/images/tt.png"
+					th:src="@{images/tt.png}" />
+		
+			</div>
+			<div class="main-heading">
+				<p class="center-text-bold">Table Tennis Pros</p>
+			</div>
+			<div class="vertical-center">
+				<p>
+					<a th:href="@{/login}" class="btn btn-large btn-success btn-custom">Login</a>
+				</p>
+			</div>
+			<div class="vertical-center">
+	 			<p>
+					<a th:href="@{/signup}" class="">Sign up</a>
+				</p>
+			</div>
+	
+	
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts :: header"></head>
+<div class="hadow bottom"
+	style="padding: 50px; text-align: center; box-shadow: 0 0 15px rgb(0 0 0/ 55%);">
+	<div class="top-header">
+		<h2 class="center-text-bold heading-inner">Create Draws</h2>
+
+	</div>
+
+</div>
+<div style="padding:15px;">
+
+<div>
+    <span>Match Type: </span> 
+    
+    <select th:field="${tournamentMatchTypes.match_type}">
+    <option th:each="matchType : ${matchTypes}" th:value="${matchType.id}" th:text="${matchType.name}">
+    </option>
+</select>
+</div>
+</div>

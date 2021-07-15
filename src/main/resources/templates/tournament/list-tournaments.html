@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts :: header"></head>
+<body>
+
+<div class="main-wrapper"> 
+
+	<div class="row">
+
+		<div class="center-text-bold tournament-heading-inner">Tournaments</div>
+
+
+		<div class="container text-center">
+			<div class="card-outer card-outer1 ">
+			  <div class="tab-list">
+			            <ul>
+			                <li th:classappend="${prams == 'ongoing' ? 'selected' : ''}"><a th:href="@{'/tournaments/all/ongoing/0'}">Ongoing</a>  </li>
+			                <li th:classappend="${prams == 'upcoming' ? 'selected' : ''}"> <a th:href="@{'/tournaments/all/upcoming/0'}">Upcoming </a></li>
+			                <li th:classappend="${prams == 'previous' ? 'selected' : ''}"> <a th:href="@{'/tournaments/all/previous/0'}">Previous </li>
+			            </ul>
+			    </div>
+				<div th:each="tournament : ${tournaments}" class="card col-md-12">
+					<div class="card-body">
+						<div class="img-with-text">
+							<img src="../static/images/tt.png" th:src="@{/images/tt.png}" />
+
+						</div>
+						<div class="card-content">
+							<a th:href="@{/tournaments/detail/{id}(id=${tournament.id})}"><h5
+									class="card-title" th:text="${tournament.name}"></h5></a>
+
+							<div class="card-content-inner">
+							  <div class="card-text-title1">
+							  		Starts On </span> <span class="card-text"
+									th:text="${tournament.start_date}"></span> 
+							  </div>
+								<div class="card-text-title1">
+									Last Date of Registration <span class="card-text"
+									th:text="${tournament.registration_end_date}"></span>
+								</div> 
+								
+							</div>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li th:if="${currentPage != 0}" class="page-item"><a
+					th:href="@{'/tournaments/all/'+${prams}+'/'+${currentPage-1}}"
+					class="page-link" href="#">Previous</a></li>
+				<li th:classappend="${currentPage == i-1 ? 'active' : ''}"
+					th:each="i : ${#numbers.sequence(1,totalPages)}" class="page-item"><a
+					th:href="@{'/tournaments/all/'+${prams}+'/'+${i-1}}"
+					class="page-link" href="#"><span th:text="${i}"></span></a></li>
+				<li th:if="${currentPage + 1 != totalPages}" class="page-item"><a
+					th:href="@{'/tournaments/all/'+${prams}+'/'+${currentPage+1}}"
+					class="page-link" href="#">Next</a></li>
+			</ul>
+		</nav>
+		<ul class="add-more-icon">
+			<li><a th:href="@{/tournaments/add}"><span><i
+						class="fa fa-plus-circle"
+						style="font-size: 48px; float: right; color: blue"></i></span></a></li>
+		</ul>
+		<footer th:replace="layouts :: footer"></footer>
+		</div>
+</body>
+</html>

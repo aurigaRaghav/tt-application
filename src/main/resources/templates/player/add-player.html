@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts :: header"></head>
+<body>
+	<div class="container text-center">
+		<div class="row login-top">
+			<div class="">
+				<h2 class="center-text-bold">Add Player</h2>
+				<form action="/player/save-player/" th:object="${player}"
+					method="post" id="save-player" enctype="multipart/form-data">
+					<div class="form-row">
+
+
+						<div class="col-md-12 form-group">
+                                <input type="file" name="player_image" th:fields="*{imagePath}"
+								accept="image/png, image/jpeg" />
+						</div>
+						<div class="col-md-12 form-group">
+
+							<input type="text" placeholder="Name" name="name" id="name"
+								class="form-control" th:fields="*{name}">
+							<div class="alert alert-warning"
+								th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+						</div>
+
+
+
+						<div class="col-md-12 form-group">
+
+							<input type="text" placeholder="Email Id" name="email" id="email"
+								class="form-control" th:fields="*{email}">
+							<div class="alert alert-warning"
+								th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+						</div>
+						<div class="col-md-12 form-group">
+							<lable>Gender:</lable>
+							<select th:field="*{gender}">
+								<option th:value="'male'" th:text="Male"></option>
+								<option th:value="'female'" th:text="Female"></option>
+							</select>
+						</div>
+						<div class="col-md-12 form-group">
+
+							<input type="text" placeholder="Age" name="age" id="age"
+								class="form-control" th:fields="*{age}"> Years
+							<div class="alert alert-warning"
+								th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
+						</div>
+
+
+					</div>
+					<input type="submit" id="signup-form-button" value="Continue"
+						class="btn btn-primary btn-block mt-3" />
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

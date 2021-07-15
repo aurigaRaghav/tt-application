@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts :: header"></head>
+<body>
+	<div class="container text-center">
+		<div class="row login-top">
+			<div class="">
+				<h2 class="center-text-bold">Create Tournament</h2>
+				<form action="/tournaments/save/" method="post" id="save-tournament"
+					enctype="multipart/form-data">
+					<div class="form-row">
+
+
+						<div class="col-md-12 form-group">
+							<input type="file" name="image" th:fields="${tournament.image}"
+								accept="image/png, image/jpeg" />
+						</div>
+
+
+						<div class="col-md-12 form-group">
+
+							<input type="text" placeholder="Tournament Name" name="name"
+								id="name" class="form-control" th:fields="${tournament.name}">
+
+						</div>
+
+
+
+						<div class="col-md-12 form-group">
+
+							<input type="text" placeholder="Start Date" name="start_date"
+								id="start_date" class="form-control datepicker"
+								th:fields="${tournament.start_date}">
+
+						</div>
+
+						<div class="col-md-12 form-group">
+
+							<input type="text" placeholder="Registration End Date"
+								name="registration_end_date" id="registration_end_date"
+								class="form-control datepicker"
+								th:fields="${tournament.registration_end_date}">
+
+						</div>
+
+						<div class="col-md-12 form-group  text-left">
+
+							<label>Max Score Per Set </label><input type="text"
+								placeholder="Max Score" name="set_score" id="set_score"
+								class="form-control" th:fields="${tournament.set_score}">
+
+						</div>
+						<div class="col-md-12 form-group  text-left">
+							<b>Matched in the Tournament</b>
+
+						</div>
+						<div class="col-md-12 form-group text-left"  th:each="singleMatchType : ${tournamentMatchTypes}">
+							<input type="checkbox" name="tournamentMatchTypes"
+								th:text="${singleMatchType.name}" th:value="${singleMatchType.id}" th:field="${tournament.tournamentMatchTypes}" />
+								
+						</div>
+					</div>
+					<input type="submit" id="tournament-form-button" value="Continue"
+						class="btn btn-primary btn-block mt-3" />
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+<script>
+	$(document).ready(function() {
+
+	});
+</script>
+</html>

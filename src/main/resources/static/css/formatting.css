@@ -1,0 +1,286 @@
+.center-text-bold {
+	height: auto;
+	width: 100%;
+	left: 74px;
+	top: 431px;
+	border-radius: nullpx;
+	font-family: SF Pro Display;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 36px;
+	letter-spacing: 0px;
+	text-align: center;
+	margin-top: 31px;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+
+.vertical-center {
+	margin: 0 auto;
+	display: block;
+}
+
+.main-wrapper {
+	font-family: 'arial', sans-serif;
+}
+
+.img-with-text {
+	overflow: hidden;
+}
+
+.img-with-text img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+}
+
+.main-heading {
+	margin: 15px 0 50px;
+}
+
+.btn-custom {
+	min-width: 192px;
+	min-height: 44px;
+	line-height: 44px;
+	background: #5983E3;
+	border-color: #5983E3;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 6px;
+}
+
+/** sign up **/
+.login-top {
+	min-height: 90vh;
+	padding: 0 15px;
+	margin: 0 auto;
+	width: 100%;
+	justify-content: center;
+}
+
+.login-top h2 {
+	margin: 35px 0 60px;
+}
+
+.login-bottom {
+	justify-content: center;
+}
+
+/** player **/
+top-header {
+	width: 100%;
+	height: 98px;
+	box-shadow: 0 0 15px rgb(0 0 0/ 12%);
+	z-index: 9;
+}
+
+.heading-inner {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 99999;
+	height: 100px;
+	background: #fff;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0 15px rgb(0 0 0/ 55%);
+}
+
+.card-outer {
+	margin-top: 150px;
+}
+
+.card {
+	margin-bottom: 25px;
+	box-shadow: 0 0 15px rgb(0 0 0/ 15%);
+}
+
+.card-body {
+	display: flex;
+	align-item: center;
+	justify-content: flex-start;
+}
+
+.img-with-text {
+	margin-right: 25px;
+}
+
+.card-content-inner {
+	display: flex;
+	justify-content: space-between;
+}
+
+.card-content {
+	text-align: left;
+}
+
+.bottom-link-division {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+	box-shadow: 0 0 15px rgb(0 0 0/ 5%);
+	z-index: 999;
+	background: #fff;
+}
+
+.bottom-link {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	list-style: none;
+	padding: 5px 15px;
+	margin: 0;
+}
+
+.add-more-icon {
+	position: fixed;
+	right: 20px;
+	bottom: 70px;
+}
+
+.card-outer1 {
+	margin-top: 62px;
+}
+
+.tab-list {
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	margin-bottom: 10px;
+}
+
+.tab-list ul {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	width: 100%;
+	height: 40px;
+	align-items: center;
+}
+
+.tab-list ul li {
+	width: 33.33%;
+	border-bottom: 2px solid transparent;
+	line-height: 40px;
+}
+
+.tab-list ul li.selected {
+	border-bottom: 2px solid #5983E3;
+}
+
+.card-outer1 .card-body {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.img-with-text img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+}
+
+.card-outer1 .card-body .img-with-text {
+	width: 52px;
+	height: 52px;
+	margin-right: 0;
+	border-radius: 50%;
+}
+
+.main-wrapper {
+	padding-bottom: 60px;
+}
+
+.card-outer1 .card-body .img-with-text img {
+	margin-right: 0;
+	max-width: 100%;
+	max-height: 100%;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card-outer1 .card-content {
+	text-align: left;
+	width: 100%;
+	padding-left: 20px;
+}
+
+.card-outer1 .card-content .card-title {
+	font-size: 16px;
+	color: #343434;
+	margin-bottom: 10px;
+}
+
+.card-outer1 .card-content-inner {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+.card-outer1 .card-text-title1 {
+	font-size: 12px;
+	font-weight: 400;
+	color: #656565;
+	margin-bottom: 5px;
+}
+
+.card-outer1 .card-text-title1 .card-text {
+	color: #000;
+}
+
+ul.pagination {
+	padding-left: 25px;
+}
+
+.tournament-heading-inner {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 45px;
+	z-index: 99999;
+	height: 60px;
+	background: #fff;
+	margin: 0;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*tournament detail page*/
+.text-formatting {
+	height: 19px;
+	width: 58px;
+	left: 16px;
+	top: 162px;
+	border-radius: nullpx;
+	font-family: Nunito;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 19px;
+	letter-spacing: 0px;
+	text-align: left;
+}
+
+.center-text-capitalize {
+	padding-top: 50px;
+	padding-left: 15px;
+	text-transform: capitalize;
+}

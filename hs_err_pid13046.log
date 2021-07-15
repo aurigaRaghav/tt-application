@@ -1,0 +1,111 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f4394ab03d1, pid=13046, tid=13078
+#
+# JRE version: OpenJDK Runtime Environment (11.0.11+9) (build 11.0.11+9-Ubuntu-0ubuntu2.18.04)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.11+9-Ubuntu-0ubuntu2.18.04, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x23d1]
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-lts
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:45013 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=44809 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -Djava.security.egd=file:/dev/./urandom -Xverify:none -XX:TieredStopAtLevel=1 -Dfile.encoding=UTF-8 com.raghav.TtApplication --spring.output.ansi.enabled=always
+
+Host: Intel(R) Core(TM) i7-3517U CPU @ 1.90GHz, 4 cores, 7G, Ubuntu 18.04.5 LTS
+Time: Wed Jul 14 16:01:28 2021 IST elapsed time: 801.898691 seconds (0d 0h 13m 21s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f43905ec000):  JavaThread "RMI TCP Accept-44809" daemon [_thread_in_vm, id=13078, stack(0x00007f4346bbb000,0x00007f4346cbc000)]
+
+Stack: [0x00007f4346bbb000,0x00007f4346cbc000],  sp=0x00007f4346cb9230,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x23d1]
+C  [libjimage.so+0x304a]
+C  [libjimage.so+0x3515]  JIMAGE_FindResource+0xd5
+V  [libjvm.so+0x596f2f]
+V  [libjvm.so+0x5991cb]
+V  [libjvm.so+0xd845ac]
+V  [libjvm.so+0xd831d2]
+V  [libjvm.so+0xd856e6]
+V  [libjvm.so+0x6403ad]
+V  [libjvm.so+0x824a4a]
+j  sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop()V+68 java.rmi@11.0.11
+j  sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run()V+1 java.rmi@11.0.11
+j  java.lang.Thread.run()V+11 java.base@11.0.11
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x82db91]
+V  [libjvm.so+0x82c030]
+V  [libjvm.so+0x82c0eb]
+V  [libjvm.so+0x8cae9c]
+V  [libjvm.so+0xdba950]
+V  [libjvm.so+0xdb67e9]
+V  [libjvm.so+0xb7b34e]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop()V+68 java.rmi@11.0.11
+j  sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run()V+1 java.rmi@11.0.11
+j  java.lang.Thread.run()V+11 java.base@11.0.11
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00007f4387883a60
+
+Register to memory mapping:
+
+RAX=0x0000000000002e91 is an unknown value
+RBX=0x00007f4346cb92e1 is pointing into the stack for thread: 0x00007f43905ec000
+RCX=0x00007f438787801c is an unknown value
+RDX=0x0000000000002e91 is an unknown value
+RSP=0x00007f4346cb9230 is pointing into the stack for thread: 0x00007f43905ec000
+RBP=0x00007f4346cb9250 is pointing into the stack for thread: 0x00007f43905ec000
+RSI=0x00007f4346cb92e0 is pointing into the stack for thread: 0x00007f43905ec000
+RDI=0x00007f4394cb3030: <offset 0x0000000000205030> in /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so at 0x00007f4394aae000
+R8 =0x0 is NULL
+R9 =0x000000000ccbfc40 is an unknown value
+R10=0x00007f4346cb931d is pointing into the stack for thread: 0x00007f43905ec000
+R11=0x00007f439785e440: <offset 0x00000000001af440> in /lib/x86_64-linux-gnu/libc.so.6 at 0x00007f43976af000
+R12=0x00007f4346cb92e0 is pointing into the stack for thread: 0x00007f43905ec000
+R13=0x000000000000843b is an unknown value
+R14=0x00007f4346cba378 is pointing into the stack for thread: 0x00007f43905ec000
+R15=0x00007f43400bf660 points into unknown readable memory: 0x2f696d722f6e7573 | 73 75 6e 2f 72 6d 69 2f
+
+
+Registers:
+RAX=0x0000000000002e91, RBX=0x00007f4346cb92e1, RCX=0x00007f438787801c, RDX=0x0000000000002e91
+RSP=0x00007f4346cb9230, RBP=0x00007f4346cb9250, RSI=0x00007f4346cb92e0, RDI=0x00007f4394cb3030
+R8 =0x0000000000000000, R9 =0x000000000ccbfc40, R10=0x00007f4346cb931d, R11=0x00007f439785e440
+R12=0x00007f4346cb92e0, R13=0x000000000000843b, R14=0x00007f4346cba378, R15=0x00007f43400bf660
+RIP=0x00007f4394ab03d1, EFLAGS=0x0000000000010246, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f4346cb9230)
+0x00007f4346cb9230:   0000000000000000 00007f4390009940
+0x00007f4346cb9240:   0000000000000000 00007f4346cb92e0
+0x00007f4346cb9250:   00007f4346cb92c0 00007f4394ab104a
+0x00007f4346cb9260:   0000000000000000 0000000000000000 
+
+Instructions: (pc=0x00007f4394ab03d1)
+0x00007f4394ab02d1:   48 89 df 48 89 4d 88 e8 53 f3 ff ff 48 8b 4d 88
+0x00007f4394ab02e1:   44 03 6d 90 e9 42 fd ff ff 66 0f 1f 44 00 00 8b
+0x00007f4394ab02f1:   08 41 89 0e 44 89 c1 8b 74 08 fc 41 89 74 0e fc
+0x00007f4394ab0301:   e9 d8 fe ff ff 66 2e 0f 1f 84 00 00 00 00 00 b9
+0x00007f4394ab0311:   0a 00 00 00 e9 95 fd ff ff 44 89 c1 0f b7 74 08
+0x00007f4394ab0321:   fe 66 41 89 74 0e fe e9 b1 fe ff ff 0f 1f 00 0f
+0x00007f4394ab0331:   b6 17 89 f1 4c 8d 47 01 84 d2 74 1a 0f 1f 00 69
+0x00007f4394ab0341:   c9 93 01 00 01 49 83 c0 01 31 d1 41 0f b6 50 ff
+0x00007f4394ab0351:   84 d2 75 eb 89 ce 89 f0 25 ff ff ff 7f c3 90 48
+0x00007f4394ab0361:   85 d2 0f 84 e1 00 00 00 85 c9 0f 84 d9 00 00 00
+0x00007f4394ab0371:   55 48 89 e5 41 55 41 54 53 48 8d 5e 01 48 83 ec
+0x00007f4394ab0381:   08 44 0f b6 06 45 84 c0 0f 84 b1 00 00 00 49 89
+0x00007f4394ab0391:   da b8 93 01 00 01 66 0f 1f 84 00 00 00 00 00 44
+0x00007f4394ab03a1:   69 c8 93 01 00 01 49 83 c2 01 41 0f b6 c0 45 0f
+0x00007f4394ab03b1:   b6 42 ff 44 31 c8 45 84 c0 75 e4 25 ff ff ff 7f
+0x00007f4394ab03c1:   41 89 cd 48 89 d1 31 d2 49 89 f4 41 f7 f5 89 d0
+0x00007f4394ab03d1:   8b 34 81 48 8b 07 ff 50 20 85 c0 7f 22 
