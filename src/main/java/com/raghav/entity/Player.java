@@ -93,4 +93,10 @@ public class Player {
 
 	}
 
+	@Override
+	public String toString() {
+		return "Player [name=" + name + ", email=" + email + ", gender=" + gender + ", age=" + age + ", imagePath="
+				+ imagePath + "]";
+	}
+
 }

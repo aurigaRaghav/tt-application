@@ -20,4 +20,7 @@ public interface PlayerRepository extends JpaRepository<Player,Long>{
 //	@Query(value="SELECT * FROM players order by id desc", nativeQuery = true) 
 //	Page<Tournament> getPlayers(@Param("status") String status,Pageable pePageble);
 
+	
+	@Query(value="select * from players where name like %:param% or email like %:param%", nativeQuery = true)
+	List<Player> filterPlayers(@Param("param") String param);
 }
